@@ -1,15 +1,9 @@
 from optimisers.simulated_annealing import SimulatedAnnealingSolver
+from optimisers.genetic_algorithm import GeneticAlgorithmSolver
 import numpy as np
 
-target = 40
-def evaluate(val):
-    return abs(val - target)
+solver = GeneticAlgorithmSolver(100, 200, 50)
 
-def mutate(val):
-    return val - np.random.uniform(0, 1, [1])[0]
-
-solver = SimulatedAnnealingSolver(1000, 1, 0.1)
-
-for i in range(10):
-    best = solver.run(80, evaluate, mutate, lambda v : abs(v - target) <= 1)
-    print (best, target)
+class Agent:
+    def __init__(self):
+        pass
